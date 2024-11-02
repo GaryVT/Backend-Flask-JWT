@@ -50,7 +50,7 @@ def role_required(role):
             current_user = get_jwt_identity()
             if current_user['role'] != role:
                 return jsonify({"msg": "No tienes permiso para acceder a este recurso"}), 403
-            return f(*args, **kwargs)
+            return f(*args, **kwargs) 
         return wrapper
     return decorator
 
